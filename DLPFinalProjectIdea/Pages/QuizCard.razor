@@ -1,0 +1,47 @@
+﻿@page "/quizcard"
+@inherits QuizCardBase
+@using DLPFinalProjectIdea.Components
+
+<div class="container">
+    <div class="quiz">
+        @if (questionIndex < Questions.Count())
+        {
+            <div class="app-title">
+                Welcome To the First Quiz
+            </div>
+            <div class="quiz-header">
+                @Questions[questionIndex].QuestionTitle
+            </div>
+            <div class="quiz-body">
+                @foreach (var option in Questions[questionIndex].Options)
+                {
+                    <OptionCard Option="@option" OnOptionSelected="OptionSelected"></OptionCard>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="app-title">
+                @if (score > (Questions.Count / 2))                 // If the score is higher than 50% of the questions
+                {
+                    <img src = "https://img.icons8.com/ios/100/00000/prize--v1.png" />      // Congratulations Image
+                }
+                else
+                {
+                    <img src= "https://img.icons8.com/color/96/00000/lose.png" />       // Under 50% Message Fail Image
+                }
+            </div>
+
+            <div class="app-title">
+                @(score > (Questions.Count() / 2) ? "Congratulations!" : "Better Luck Next Time");
+            </div>
+            <div class="quiz-header">
+                <b>You scored @score points!</b>
+            </div>
+            <div class="quiz-footer">
+                <button> class="next-btn" onclick="">You have finished the quiz!</button>
+            </div>
+        }
+        </div>
+    </div>
+                
