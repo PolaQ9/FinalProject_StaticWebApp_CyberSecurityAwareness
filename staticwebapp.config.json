@@ -5,6 +5,12 @@
       "allowedRoles": [
         "authenticated"
       ]
+    },
+    {
+      "route": "/counter",
+      "allowedRoles": [
+        "owner"
+      ]
     }
   ]
 }
