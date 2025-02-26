@@ -2,7 +2,7 @@
   "routes": [
     {
       "route": "/counter",
-      "allowedRoles": [ "anonymous" ]
+      "allowedRoles": [ "owner" ]
     },
     {
       "route": "/quizcard",
