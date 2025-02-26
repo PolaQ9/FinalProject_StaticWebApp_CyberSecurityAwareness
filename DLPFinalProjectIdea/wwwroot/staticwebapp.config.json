@@ -6,9 +6,13 @@
     },
     {
       "route": "/quizcard",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": [ "authenticated" ]
     }
   ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [ "/static/*", "/api/*" ]
+  },
   "responseOverrides": {
     "401": {
       "statusCode": 302,
