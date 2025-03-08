@@ -1,15 +1,15 @@
 {
   "routes": [
     {
-      "route": "/*",
-      "allowedRoles":  [ "authenticated" ]
-    },
-    {
       "route": "/counter",
       "allowedRoles": [ "owner" ]
     },
     {
       "route": "/quizcard",
+      "allowedRoles": [ "authenticated" ]
+    },
+    {
+      "route": "/*",
       "allowedRoles": [ "authenticated" ]
     }
   ],
