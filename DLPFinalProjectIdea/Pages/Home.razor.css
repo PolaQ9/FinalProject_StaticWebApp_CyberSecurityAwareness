@@ -1,0 +1,41 @@
+﻿
+.hero-section {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('/images/background_home.png') no-repeat center center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+    
+    .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);         /* Greys out the background picture not to be so bright*/
+    }
+
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    text-align: center;
+}
+
+    
+    .hero-content h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
