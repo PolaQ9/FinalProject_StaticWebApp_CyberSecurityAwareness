@@ -1,0 +1,48 @@
+﻿.page-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+body {
+    background-color: #0d0d0d;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.page-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.entry-form input,
+.entry-form textarea {
+    width: 100%;
+    background: #1a1a1a;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.entry-form button {
+    background: transparent;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+    .entry-form button:hover {
+        background: #00ff00;
+        color: #0d0d0d;
+    }
+
+.entry-list {
+    margin-top: 30px;
+}
+
+.entry-item {
+    margin-bottom: 20px;
+}

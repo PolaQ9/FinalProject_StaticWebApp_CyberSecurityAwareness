@@ -1,0 +1,51 @@
+﻿@page "/journal"
+@using DLPFinalProjectIdea.Models
+
+<h3>Cybersecurity Journal</h3>
+
+<div class="question-box">
+    <p><strong>Today's Prompt:</strong> @currentQuestion</p>
+</div>
+
+<div class="entry-form">
+    <input @bind="newEntry.Title" placeholder="Title" />
+    <textarea @bind="newEntry.Content" placeholder="Your thoughts..." rows="5"></textarea>
+    <button @onclick="AddEntry">Add Entry</button>
+</div>
+
+<div class="entry-list">
+    @foreach (var entry in journalEntries)
+    {
+        <div class="entry-item">
+            <strong>@entry.Title</strong> <em>(@entry.Created.ToShortDateString())</em>
+            <p>@entry.Content</p>
+        </div>
+    }
+</div>
+
+@code {
+    private List<JournalEntry> journalEntries = new();
+    private JournalEntry newEntry = new();
+
+    private string currentQuestion = "";
+    private List<string> questions = new()      // Questions for the Journal Entries
+    {
+        "What did you learn about cybersecurity today?",
+        "Did you notice any potential security risks?",
+        "What would you do differently to stay safer online?",
+        "What was today's biggest cybersecurity news?"
+    };
+
+    protected override void OnInitialized()         // Randomizes the question for the Journal
+    {
+        var random = new Random();
+        int index = random.Next(questions.Count);
+        currentQuestion = questions[index];
+    }
+
+    private void AddEntry()
+    {
+        journalEntries.Add(newEntry);
+        newEntry = new JournalEntry();
+    }
+}
