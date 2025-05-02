@@ -1,0 +1,25 @@
+﻿@page "/quiz"
+@inject NavigationManager NavigationManager
+
+<h2>Select a Quiz</h2>
+
+<div class="quiz-grid">
+    <div class="quiz-card" @onclick="@(() => NavigateToQuiz("cyber-awareness"))">
+        <img src="images/cyber-awereness_quiz.jpg" />
+        <h3>Cyber Awareness</h3>
+        <p>Ability to be aware of common attacks.</p>
+    </div>
+
+    <div class="quiz-card" @onclick="@(() => NavigateToQuiz("malware"))">
+        <img src="images/malware_quiz.jpg" />
+        <h3>Types of Malware</h3>
+        <p>What are the malware types that hackers use?</p>
+    </div>
+</div>
+
+@code {
+    void NavigateToQuiz(string id)
+    {
+        NavigationManager.NavigateTo($"/quiz/{id}");
+    }
+}
