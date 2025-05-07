@@ -1,5 +1,6 @@
 ﻿@page "/quiz/{QuizId}"
 @inherits QuizCardBase
+@inject NavigationManager NavigationManager
 @using DLPFinalProjectIdea.Components
 
 <div class="container">
@@ -24,23 +25,30 @@
             <div class="app-title">
                 @if (score > (Questions.Count / 2))                 // If the score is higher than 50% of the questions
                 {
-                    <img src = "" />      // Congratulations Image
+                    <img src = "images/medal.png" width="150" height="150" />      // Congratulations Image
                 }
                 else
                 {
-                    <img src= "" />       // Under 50% Message Fail Image
+                    <img src= "images/broken_trophy.png" width="150" height="150" />       // Under 50% Message Fail Image
                 }
             </div>
 
             <div class="app-title">
-                @(score > (Questions.Count() / 2) ? "Congratulations!" : "Better Luck Next Time");
+                @(score > (Questions.Count() / 2) ? "Congratulations!" : "Better Luck Next Time")
             </div>
             <div class="quiz-header">
                 <b>You scored @score points!</b>
             </div>
             <div class="quiz-footer">
-                <button> class="next-btn" onclick="">You have finished the quiz!</button>
+                <button class="next-btn" @onclick="finishQuiz">You have finished the quiz!</button>
             </div>
+
+            @code {
+            void finishQuiz()
+            {
+                NavigationManager.NavigateTo("/quiz");
+            }
+            }
         }
         </div>
     </div>
