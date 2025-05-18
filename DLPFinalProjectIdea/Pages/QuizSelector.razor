@@ -13,7 +13,7 @@
     <div class="quiz-card" @onclick="@(() => NavigateToQuiz("malware"))">
         <img src="images/malware_quiz.jpg" />
         <h3>Types of Malware & Attacks</h3>
-        <p>What are the malware and methods does hackers use?</p>
+        <p>What are the malware and methods that hackers use?</p>
     </div>
 
     <div class="quiz-card" @onclick="@(() => NavigateToQuiz("internetsafety"))">
@@ -21,7 +21,52 @@
         <h3>Internet Safety</h3>
         <p>How to stay safe on the internet</p>
     </div>
+
+    <div class="quiz-card" @onclick="@(() => NavigateToQuiz("protectdata"))">
+        <img src="images/protectdata_quiz.jpg" />
+        <h3>Protect Personal & Company Data</h3>
+        <p>How to keep clients personal and company data safe </p>
+    </div>
+
+    <div class="quiz-card" @onclick="@(() => NavigateToQuiz("phishing"))">
+        <img src="images/phishing_quiz.jpg" />
+        <h3>Phishing and Social Engineering</h3>
+        <p>One of the most common attack type that employees face. It's very important to be able to verify authenticity of emails/SMS/messages and able to avoid it. </p>
+    </div>
+    
+    <div class="quiz-card" @onclick="@(() => NavigateToQuiz("safeuse"))">
+        <img src="images/safeuse_quiz.jpg" />
+        <h3>Safe use of Work Devices</h3>
+        <p>Ability to properly & safely use the devices at work. </p>
+    </div>
+
+    <div class="quiz-card" @onclick="@(() => NavigateToQuiz("reporting"))">
+        <img src="images/reporting_quiz.jpg" />
+        <h3>Reporting Security Incidents</h3>
+        <p>How to report suspicious activity. </p>
+    </div>
+
+        <div class="quiz-card" @onclick="@(() => NavigateToQuiz("fileshare"))">
+        <img src="images/fileshare_quiz.png" />
+        <h3>Secure File Sharing and Cloud Use</h3>
+        <p>How to safely share files with colleagues and use the cloud. </p>
+    </div>
+
+    <div class="quiz-card" @onclick="@(() => NavigateToQuiz("deleting"))">
+        <img src="images/deleting_quiz.png" />
+        <h3>Disposal of Data and Devices</h3>
+        <p>How to safely delete data. </p>
+    </div>
+
+    <div class="quiz-card" @onclick="@(() => NavigateToQuiz("traveling"))">
+        <img src="images/traveling_quiz.jpg" />
+        <h3>Security While Traveling</h3>
+        <p>Measures to take while traveling to avoid data theft. </p>
+    </div>
+
 </div>
+
+
 
 @code {
     void NavigateToQuiz(string id)
