@@ -29,5 +29,17 @@
       "mode": "production"
     }
   },
-  "entities": {}
+  "entities": {
+    "users": {
+      "source": "dbo.Users",
+      "rest": true,
+      "graphql": true,
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [ "read" ]
+        }
+      ]
+    }
+  }
 }
