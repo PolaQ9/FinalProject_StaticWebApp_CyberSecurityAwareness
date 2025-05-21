@@ -30,7 +30,7 @@
     }
   },
   "entities": {
-    "users": {
+    "Tables": {
       "source": "dbo.Users",
       "rest": true,
       "graphql": true,
