@@ -383,59 +383,296 @@ namespace DLPFinalProjectIdea.Pages
             {
                 var q1 = new Question
                 {
-                    QuestionTitle = ".",
-                    Options = new List<string> { "test", "test", "test", "test" },
-                    Answer = "test"
+                    QuestionTitle = "What is the most secure way to access your work device?",
+                    Options = new List<string> { "Share login credentials with your team", "Use multi-factor authentication (MFA)", "Always stay logged in", "Write your password on a sticky note" },
+                    Answer = "Use multi-factor authentication (MFA)"
                 };
 
                 var q2 = new Question
                 {
-                    QuestionTitle = ".",
-                    Options = new List<string> { "test", "test", "test", "test" },
-                    Answer = "test"
+                    QuestionTitle = "Which of the following is a good practice for handling sensitive work data?",
+                    Options = new List<string> { "Email it to your personal account for convenience", "Save it on a public shared drive", "Encrypt files before sending them", "Leave your screen unlocked when leaving your desk" },
+                    Answer = "Encrypt files before sending them"
                 };
 
                 var q3 = new Question
                 {
-                    QuestionTitle = ".",
-                    Options = new List<string> { "test", "test", "test", "test" },
-                    Answer = "test"
+                    QuestionTitle = "What should you do if you receive a suspicious email on your work device?",
+                    Options = new List<string> { "Open it to see what it says", "Forward it to your friends", "Click all the links to test for viruses", "Report it to IT immediately" },
+                    Answer = "Report it to IT immediately"
                 };
 
                 var q4 = new Question
                 {
-                    QuestionTitle = ".",
-                    Options = new List<string> { "test", "test", "test", "test" },
-                    Answer = "test"
+                    QuestionTitle = "Which of the following is considered unsafe behavior when using work devices?",
+                    Options = new List<string> { "Updating software regularly", "Installing unauthorized apps", "Locking your screen when away", "Using secure passwords" },
+                    Answer = "Installing unauthorized apps"
                 };
 
                 var q5 = new Question
                 {
-                    QuestionTitle = ".",
-                    Options = new List<string> { "test", "test", "test", "test" },
+                    QuestionTitle = "What is the safest way to store passwords for your work accounts?",
+                    Options = new List<string> { "On a piece of paper in your drawer", "In a secure password manager", "Memorize only one password and use it for all accounts", "In a plain text file on your desktop" },
+                    Answer = "In a secure password manager"
+                };
+
+                var q6 = new Question
+                {
+                    QuestionTitle = "Why is it important to lock your computer when stepping away from your desk?",
+                    Options = new List<string> { "To save electricity", "To make it boot faster late", "To protect sensitive information from unauthorized access", "To avoid pop-up ads" },
+                    Answer = "To protect sensitive information from unauthorized access"
+                };
+
+                var q7 = new Question
+                {
+                    QuestionTitle = "What should you do before connecting your work device to a public Wi-Fi network?",
+                    Options = new List<string> { "Ensure your VPN is active", "Turn off antivirus software", "Disable firewalls", "Download games to pass the time" },
+                    Answer = "Ensure your VPN is active"
+                };
+
+                var q8 = new Question
+                {
+                    QuestionTitle = "Which of the following actions can help prevent data loss on work devices?",
+                    Options = new List<string> { "Only using the device for entertainment", "Regularly backing up important files", "Avoiding software updates", "Disabling security alerts" },
+                    Answer = "Regularly backing up important files"
+                };
+                Questions.AddRange(new List<Question> { q1, q2, q3, q4, q5, q6, q7, q8 });
+            }
+            else if (QuizId == "reporting")
+            {
+                var q1 = new Question
+                {
+                    QuestionTitle = "What is the first step when you notice a potential security incident?",
+                    Options = new List<string> { "Try to fix it yourself", "Ignore it unless it happens again", "Report it immediately to the IT", "Ask your coworker what to do" },
+                    Answer = "Report it immediately to the IT"
+                };
+
+                var q2 = new Question
+                {
+                    QuestionTitle = "Which of the following is considered a security incident?",
+                    Options = new List<string> { "A system running slowly due to updates", "A coworker forgetting their password", "Unauthorized access to sensitive data", "Receiving a calendar invite" },
+                    Answer = "Unauthorized access to sensitive data"
+                };
+
+                var q3 = new Question
+                {
+                    QuestionTitle = "Who should you report a security incident to?",
+                    Options = new List<string> { "Your social media followers", "The IT or Security team", "Your friends at lunch", "The office janitor" },
+                    Answer = "The IT or Security team"
+                };
+
+                var q4 = new Question
+                {
+                    QuestionTitle = "What is the main reason for reporting a security incident quickly?",
+                    Options = new List<string> { "To avoid doing your regular work", "To blame someone else", "To limit damage and start mitigation steps", "To test the response process" },
+                    Answer = "To limit damage and start mitigation steps"
+                };
+
+                var q5 = new Question
+                {
+                    QuestionTitle = "What information should you include in a security incident report?",
+                    Options = new List<string> { "The exact time, details, and how you noticed the incident", "Only your personal opinion", "Gossip about who might be responsible", "Nothing, just say something happened" },
+                    Answer = "The exact time, details, and how you noticed the incident"
+                };
+
+                var q6 = new Question
+                {
+                    QuestionTitle = "What should you do if you’re unsure whether something is a security incident?",
+                    Options = new List<string> { "Wait until you're sure", "Don’t report it", "Post about it on a forum", "Report it just in case" },
+                    Answer = "Report it just in case"
+                };
+
+                var q7 = new Question
+                {
+                    QuestionTitle = "When is it acceptable to investigate a potential incident on your own?",
+                    Options = new List<string> { "When you’re curious", "If you're sure it's minor", "Always", "Only if authorized by security personnel" },
+                    Answer = "Only if authorized by security personnel"
+                };
+
+                var q8 = new Question
+                {
+                    QuestionTitle = "Which of the following is NOT a proper channel for reporting a security incident?",
+                    Options = new List<string> { "Internal incident reporting system", "Directly contacting the security team", "Using a secure company reporting form", "Posting it in public channel" },
+                    Answer = "Posting it in public channel"
+                };
+                Questions.AddRange(new List<Question> { q1, q2, q3, q4, q5, q6, q7, q8 });
+            }
+            else if (QuizId == "fileshare")
+            {
+                var q1 = new Question
+                {
+                    QuestionTitle = "What is the safest method for sharing confidential files with a colleague?",
+                    Options = new List<string> { "Sending via personal email", "Uploading to a public cloud folder", "Using a secure company-approved file sharing platform", "Printing and mailing the document" },
+                    Answer = "Using a secure company-approved file sharing platform"
+                };
+
+                var q2 = new Question
+                {
+                    QuestionTitle = "What is one risk of using unauthorized cloud services?",
+                    Options = new List<string> { "Data leaks and non-compliance with policies", "Faster download speeds", "Unlimited storage", "Improved collaboration" },
+                    Answer = "Data leaks and non-compliance with policies"
+                };
+
+                var q3 = new Question
+                {
+                    QuestionTitle = "What should you always do before uploading sensitive files to the cloud?",
+                    Options = new List<string> { "Compress the files", "Rename them with emojis", "Check the weather", "Encrypt or password-protect them" },
+                    Answer = "Encrypt or password-protect them"
+                };
+
+                var q4 = new Question
+                {
+                    QuestionTitle = "When sharing a cloud document, which setting is the most secure?",
+                    Options = new List<string> { "Anyone with the link can edit", "Only specific people can view or edit", "Public on the web", "Share with your personal email" },
+                    Answer = "Only specific people can view or edit"
+                };
+
+                var q5 = new Question
+                {
+                    QuestionTitle = "What is a red flag when receiving a file-sharing link from someone?",
+                    Options = new List<string> { "It’s shared through the official platform", "The sender is someone you know", "The link leads to a site asking for your login info", "The file is in PDF forma" },
+                    Answer = "The link leads to a site asking for your login info"
+                };
+
+                var q6 = new Question
+                {
+                    QuestionTitle = "Why is it important to regularly review shared cloud documents?",
+                    Options = new List<string> { "To remove access for people who no longer need it", "To make sure everyone is still reading them", "To organize them by size", "To count how many times it's been opene" },
+                    Answer = "To remove access for people who no longer need it"
+                };
+
+                var q7 = new Question
+                {
+                    QuestionTitle = "What should you do if you accidentally share a sensitive file with the wrong person?",
+                    Options = new List<string> { "Delete the file silently", " Ignore it unless they mention it", "Blame the cloud service", "Revoke access and notify your IT/security team immediately" },
+                    Answer = "Revoke access and notify your IT/security team immediately"
+                };
+
+                var q8 = new Question
+                {
+                    QuestionTitle = "Which of the following practices enhances cloud file security?",
+                    Options = new List<string> { "Saving all passwords in a notes file", "Sharing files via social media", "Using strong access controls and regular auditst", "Keeping files indefinitely, regardless of need" },
+                    Answer = "Using strong access controls and regular audits"
+                };
+                Questions.AddRange(new List<Question> { q1, q2, q3, q4, q5, q6, q7, q8 });
+            }
+            else if (QuizId == "deleting")
+            {
+                var q1 = new Question
+                {
+                    QuestionTitle = "What is the most secure way to delete sensitive files from a computer?",
+                    Options = new List<string> { "Use data-wiping software or secure erase tools", "Use the \"Delete\" key on your keyboard", "Move them to the Recycle Bin", "Rename the files" },
+                    Answer = "Use data-wiping software or secure erase tools"
+                };
+
+                var q2 = new Question
+                {
+                    QuestionTitle = "What should you do before disposing of an old company phone or laptop?",
+                    Options = new List<string> { "Nothing", "Factory reset the device and inform IT", " Throw it away in a trash bin", "Give it to a friend" },
+                    Answer = "Factory reset the device and inform IT"
+                };
+
+                var q3 = new Question
+                {
+                    QuestionTitle = "Why is simply deleting files not enough to protect sensitive data?",
+                    Options = new List<string> { "Because it takes too long", "Because files can still be recovered from the disk", "Because it makes the device run slower", "Because deleted files automatically go to the cloud" },
+                    Answer = "Because files can still be recovered from the disk"
+                };
+
+                var q4 = new Question
+                {
+                    QuestionTitle = "What is a secure method to physically destroy a storage device?",
+                    Options = new List<string> { "Crumpling it with your hands", "Soaking it in water", "Shredding or degaussing it", "Hiding it in a drawer" },
+                    Answer = "Shredding or degaussing it"
+                };
+
+                var q5 = new Question
+                {
+                    QuestionTitle = "What is the purpose of device disposal policies in an organization?",
+                    Options = new List<string> { "To allow reuse of old passwords", "To control employee device usage", "To create more storage space", "To ensure data is securely removed and devices are responsibly discarded" },
+                    Answer = "To ensure data is securely removed and devices are responsibly discarded"
+                };
+
+                var q6 = new Question
+                {
+                    QuestionTitle = "Before donating an old device, what should you do?",
+                    Options = new List<string> { "Wipe all personal and sensitive data", "Add a new password", "Include your contact info in case it's lost", "Remove the screen protector" },
+                    Answer = "Wipe all personal and sensitive data"
+                };
+
+                var q7 = new Question
+                {
+                    QuestionTitle = "Which of the following should be securely deleted before recycling a printer?",
+                    Options = new List<string> { "Ink cartridges", "Print history and stored documents", "Paper tray", "Power cable" },
+                    Answer = "Print history and stored documents"
+                };
+
+                var q8 = new Question
+                {
+                    QuestionTitle = "What risk is posed by improperly disposing of devices?",
+                    Options = new List<string> { "Printer malfunctions", "Increased electricity bills", "Identity theft or data breaches", "Lower internet speed" },
+                    Answer = "Identity theft or data breaches"
+                };
+                Questions.AddRange(new List<Question> { q1, q2, q3, q4, q5, q6, q7, q8 });
+            }
+            else if (QuizId == "traveling")
+            {
+                var q1 = new Question
+                {
+                    QuestionTitle = "What should you always do before traveling with a work device?",
+                    Options = new List<string> { "Share passwords with a colleague", "Install games for offline use", "Backup important data and update security software", "Leave it unlocked for easy access" },
+                    Answer = "Backup important data and update security software"
+                };
+
+                var q2 = new Question
+                {
+                    QuestionTitle = "Why is using public Wi-Fi risky when traveling?",
+                    Options = new List<string> { "It’s too slow for work", "It doesn’t work with Bluetooth", "It uses more battery", "It may expose your device to malware or hackers" },
+                    Answer = "It may expose your device to malware or hackers"
+                };
+
+                var q3 = new Question
+                {
+                    QuestionTitle = "What tool should you use to safely access work resources over public networks?",
+                    Options = new List<string> { "Public DNS settings", "Virtual Private Network (VPN)", "Incognito browser mode", "Social media login" },
+                    Answer = "Virtual Private Network (VPN)"
+                };
+
+                var q4 = new Question
+                {
+                    QuestionTitle = "How can you prevent \"shoulder surfing\" in public places?",
+                    Options = new List<string> { "Use a privacy screen filter", "Turn off the screen", "Hold the laptop above your head", "Wear sunglasses" },
+                    Answer = "Use a privacy screen filter"
+                };
+
+                var q5 = new Question
+                {
+                    QuestionTitle = "What’s a best practice for storing devices in a hotel room?",
+                    Options = new List<string> { "Leave them on the bed", "Place them near the window", "Hide them under the pillow", "Lock them in the room safe or carry them with you" },
                     Answer = "test"
                 };
 
                 var q6 = new Question
                 {
-                    QuestionTitle = ".",
-                    Options = new List<string> { "test", "test", "test", "test" },
-                    Answer = "test"
+                    QuestionTitle = "What is the safest way to charge your device while traveling?",
+                    Options = new List<string> { "Use a public USB charging station", "Use your own charger plugged into a power outlet", "Use any available cable", "Charge it through a stranger’s laptop" },
+                    Answer = "Use your own charger plugged into a power outlet"
                 };
 
                 var q7 = new Question
                 {
-                    QuestionTitle = ".",
-                    Options = new List<string> { "test", "test", "test", "test" },
-                    Answer = "test"
+                    QuestionTitle = "What should you do if your device is lost or stolen while traveling?",
+                    Options = new List<string> { "Immediately report it to IT/security and remotely wipe it if possible", "Ask social media for help", "Try to replace it from a local store", "Wait until you return to report it" },
+                    Answer = "Immediately report it to IT/security and remotely wipe it if possible"
                 };
 
                 var q8 = new Question
                 {
-                    QuestionTitle = ".",
-                    Options = new List<string> { "test", "test", "test", "test" },
-                    Answer = "test"
+                    QuestionTitle = "What kind of data should you avoid accessing while on unsecured networks?",
+                    Options = new List<string> { "Public websites", "Social media", "Weather updates", "Sensitive work documents or emails" },
+                    Answer = "Sensitive work documents or emails"
                 };
+                Questions.AddRange(new List<Question> { q1, q2, q3, q4, q5, q6, q7, q8 });
             }
         }
     }
