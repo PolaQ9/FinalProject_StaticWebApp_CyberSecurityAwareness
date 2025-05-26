@@ -16,6 +16,7 @@
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.4); /* Greys out the background picture not to be so bright*/
+        z-index: -1;
 
     font-size: 2rem;
     margin-bottom: 20px;
@@ -70,3 +71,11 @@ body {
 .question-box {
     color: #00ff00;
 }
+
+#wordCloudCanvas {
+    position: relative;
+    z-index: 10;
+    display: block;
+    border: 2px solid lime; /* Just for testing visibility */
+}
+

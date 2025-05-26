@@ -1,5 +1,7 @@
 ﻿@page "/journal"
 @using DLPFinalProjectIdea.Models
+@using System.Collections.Generic;
+@inject IJSRuntime JS
 
 <div class="hero-section">
     <div class="hero-content">
@@ -13,6 +15,7 @@
 <div class="entry-form">
     <input @bind="newEntry.Title" placeholder="Title" />
     <textarea @bind="newEntry.Content" placeholder="Your thoughts..." rows="5"></textarea>
+    <input @bind="newEntry.Keyword" placeholder="Add Keywords (Vulnerability, Attack Types etc) comma-separtes keywords" />
     <button @onclick="AddEntry">Add Entry</button>
 </div>
 
@@ -26,7 +29,38 @@
     }
 </div>
 
+<h4>Keyword Word Cloud</h4>
+<canvas id="wordCloudCanvas" width="600" height="400"></canvas>
+
+
+
 @code {
+    private Dictionary<string, int> keywordFrequency = new();       
+    private void UpdateKeywordFrequency()
+    {
+        keywordFrequency.Clear();   
+
+        foreach (var entry in journalEntries)
+        {
+            if (string.IsNullOrWhiteSpace(entry.Keyword)) continue;     // Skip entries without any keyword
+
+            var keywords = entry.Keyword.Split(',', StringSplitOptions.RemoveEmptyEntries);     // spliting each keyword with the comma ","
+
+            foreach (var keyword in keywords)
+            {
+                var trimmed = keyword.Trim().ToLower();
+                if (string.IsNullOrWhiteSpace(trimmed)) continue; // Prevent empty ones
+
+                if (keywordFrequency.ContainsKey(trimmed))      // count for each keyword
+                    keywordFrequency[trimmed]++;
+                else
+                    keywordFrequency[trimmed] = 1;
+            }
+        }
+    }
+
+
+
     private List<JournalEntry> journalEntries = new();
     private JournalEntry newEntry = new();
 
@@ -46,9 +80,38 @@
         currentQuestion = questions[index];
     }
 
-    private void AddEntry()
+    private async Task AddEntry()
     {
-        journalEntries.Add(newEntry);
-        newEntry = new JournalEntry();
+        foreach (var kvp in keywordFrequency)
+        {
+            Console.WriteLine($"[C#] Keyword: {kvp.Key}, Count: {kvp.Value}");      // Using it to debug in terminal
+        }
+
+        
+        var entryToAdd = new JournalEntry
+        {
+            Title = newEntry.Title,
+            Content = newEntry.Content,
+            Keyword = newEntry.Keyword,
+            Created = DateTime.Now
+        };
+
+        journalEntries.Add(entryToAdd); 
+        newEntry = new JournalEntry();      // Clear the journal entry
+
+        UpdateKeywordFrequency();   // Recalculate keyword count for JS
+
+        var wordData = keywordFrequency     // Prepare formatted array of keyword-frequency pairs
+            .Where(kvp => !string.IsNullOrWhiteSpace(kvp.Key))
+            .Select(kvp => new object[] { kvp.Key, kvp.Value })
+            .ToArray();
+
+        await JS.InvokeVoidAsync("renderWordCloud", new object[] { wordData }); // Send to JavaScript
+
+
+    }
+
+
+
     }
 }
